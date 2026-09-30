@@ -1,0 +1,59 @@
+﻿<Window x:Class="RockPaperScissorsApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="حجرة ورقة مقص" Height="450" Width="500"
+        WindowStartupLocation="CenterScreen" Background="#F0F4F8">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+            <Border Background="#3B82F6" CornerRadius="10" Padding="15,8" Margin="10">
+                <TextBlock x:Name="TxtPlayerScore" Text="أنت: 0" Foreground="White" FontSize="18" FontWeight="Bold"/>
+            </Border>
+            <Border Background="#EF4444" CornerRadius="10" Padding="15,8" Margin="10">
+                <TextBlock x:Name="TxtComputerScore" Text="الكمبيوتر: 0" Foreground="White" FontSize="18" FontWeight="Bold"/>
+            </Border>
+        </StackPanel>
+
+        <Border Grid.Row="1" Background="White" CornerRadius="15" Padding="20">
+            <StackPanel VerticalAlignment="Center">
+                <Grid Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <TextBlock Text="اختيارك" FontSize="14" Foreground="#64748B" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="TxtPlayerVisual" Text="❓" FontSize="64" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Column="1" Text="VS" FontSize="22" FontWeight="Black" Foreground="#94A3B8" VerticalAlignment="Center"/>
+
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                        <TextBlock Text="الكمبيوتر" FontSize="14" Foreground="#64748B" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="TxtComputerVisual" Text="❓" FontSize="64" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Grid>
+
+                <TextBlock x:Name="TxtResult" Text="اختر لتبدأ اللعب!" FontSize="20" FontWeight="Bold" 
+                           Foreground="#1E293B" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+            <Button Content="🌑 حجر" Click="BtnChoice_Click" Tag="Rock"
+                    Width="110" Height="50" FontSize="16" Margin="8" Cursor="Hand"/>
+            <Button Content="📄 ورقة" Click="BtnChoice_Click" Tag="Paper"
+                    Width="110" Height="50" FontSize="16" Margin="8" Cursor="Hand"/>
+            <Button Content="✂️ مقص" Click="BtnChoice_Click" Tag="Scissors"
+                    Width="110" Height="50" FontSize="16" Margin="8" Cursor="Hand"/>
+        </StackPanel>
+    </Grid>
+</Window>
